@@ -3,8 +3,14 @@
 const path = require('path');
 const ExtractTextPlugin = require ('extract-text-webpack-plugin');
 const HtmlWebpackPlugin    = require('html-webpack-plugin');
+const postcss    = require('postcss');
 let FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 var sass = require('sass');
+const autoprefixer = require('autoprefixer');
+//var cleaner  = postcss([ autoprefixer({ add: false, browsers: [] }) ]);
+//var prefixer = postcss([ autoprefixer ]);
+
+
 
 const config = {
 	entry:{
@@ -14,7 +20,7 @@ const config = {
     path: path.resolve(__dirname, 'dist'),
     filename: 'js/main.js'
   },
-  	module: {
+	module: {
 		rules: [
 				{
 					test: /\.js$/,
@@ -24,10 +30,32 @@ const config = {
 						options: {presets: ['babel-preset-env']}
 					}
 				},{ 
-					test: /\.scss$/,
+					test: /\.(sa|sc|c)ss$/,
 					use: ExtractTextPlugin.extract({
 						fallback: "style-loader",
-						use: ["css-loader", "sass-loader"],
+						use: [
+						//"css-loader", 
+						{loader: 'css-loader', options: {
+							url: false,
+							minimize: true,
+							sourceMap: true
+						}},{
+						//"sass-loader",
+						loader: 'sass-loader', options: {
+							sourceMap: true
+						}},{
+						loader: 'postcss-loader',
+							options: {
+								plugins: [
+									autoprefixer({
+										browsers:['last 6 version']
+									})
+								],
+								sourceMap: true
+							}	
+						}
+						
+						],
 						publicPath:'./css/'
 					})
 				},{

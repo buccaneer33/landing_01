@@ -1,0 +1,9 @@
+.nav__link--theme{
+  color: $nav__font--color;
+  text-decoration: none;
+  font-size: 13px;
+
+  &:hover{
+    color: $nav__font--hover;
+  }
+}

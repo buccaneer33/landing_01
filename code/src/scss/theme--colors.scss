@@ -1,0 +1,30 @@
+.body--theme{
+  font-family: Georgia, sans-serif;
+}
+.header--theme{
+  background-color: $header__bgc--color;
+  color: $header__font--color;
+}
+.header__name--theme{
+  font-size: 36px;
+  color: $header__font--color;
+}
+.header__slogan--theme{
+  font-size: 13px;
+  color: $header__font--color;
+}
+.header__nav--theme{
+  background-color: $nav__bgc--color;
+  color: $nav__font--color;
+  font-size: 13px;
+  border-radius: 8px;
+}
+
+.main--theme{
+  background-color: $main__bgc--color;
+  color: $main__font--color;
+
+}
+.footer--theme{
+  background-color: #00f;
+}

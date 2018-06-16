@@ -1,0 +1,44 @@
+.galery{
+    position: relative;
+}
+.slider{
+    max-width: 960px;
+
+  &__item{
+    display: none;
+    width: 100%;
+  }
+  &__control{
+    position: absolute;
+    top: 2%;
+    right: 2%;
+
+  }
+  &__control_item{
+      height: 10px;
+      width: 10px;
+      background-color: transparent;
+      border-color: transparent;
+      color: $nav__font--color;
+      cursor: pointer;
+
+    &::before{
+      content: "\f111";
+      font-family: FontAwesome;
+      color: inherit;
+    }
+  }
+  &__control_item--active{
+    height: 10px;
+    width: 10px;
+    background-color: transparent;
+    border-color: transparent;
+    color: $nav__font--color;
+    cursor: pointer;
+  &::before{
+    content: "\f10c";
+    font-family: FontAwesome;
+    color: inherit;
+  }
+  }
+}
