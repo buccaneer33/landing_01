@@ -8,6 +8,6 @@ import '../../assets/slider/6.jpg';
 import '../../assets/news/img1.jpg';
 import '../../assets/news/img2.jpg';
 import '../../assets/news/img3.jpg';
-//import '../../assets/img7.jpg';
+import '../../assets/latest/dance.jpg';
 //import '../../assets/img8.jpg';
 //import '../../assets/img9.jpg';

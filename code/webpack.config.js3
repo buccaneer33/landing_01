@@ -7,6 +7,10 @@ const postcss    = require('postcss');
 let FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 var sass = require('sass');
 const autoprefixer = require('autoprefixer');
+//var cleaner  = postcss([ autoprefixer({ add: false, browsers: [] }) ]);
+//var prefixer = postcss([ autoprefixer ]);
+
+
 
 const config = {
 	entry:{
@@ -54,8 +58,7 @@ const config = {
 						],
 						publicPath:'./css/'
 					})
-				},
-				{
+				},{
 					test: /\.(png|jpg|gif)$/,
 					use: [
 						  {
@@ -66,29 +69,7 @@ const config = {
 							}
 						  }
 						]
-				},/**/
-				{
-					  test: /\.(ttf|eot|woff|woff2)$/,
-					  use:
-					  /*[
-						 {
-							 loader: 'file-loader?name=./assets/fontie-package/fonts/[name].[ext]'
-						 },
-						 {
-							 loader: 'file-loader?name=./assets/font-awesome/fonts/[name].[ext]'
-						 }
-						]*/
-
-					  {
-						loader: "file-loader",
-						options: {
-						  name: "[name].[ext]",
-						  context: path.resolve(__dirname, "./fonts")
-						},
-					  },/**/
-					  
-					  
-					}
+				}
 		]
   },
   plugins: [

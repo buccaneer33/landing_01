@@ -23,6 +23,8 @@ RUN cd /app && \npm install
 #Bundle app source
 COPY src /app/src/
 COPY assets /app/assets
+COPY assets/font-awesome/fonts /fonts
+COPY assets/fontie-package/fonts /css/fonts
 #RUN cd /app/src/ && ls
     
 # Start building project 

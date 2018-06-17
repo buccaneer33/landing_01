@@ -7,3 +7,9 @@
     color: $nav__font--hover;
   }
 }
+.link--more{
+  text-decoration: none;
+  font-size: 13px;
+  color: $more__font--color;
+  cursor: pointer;
+}
