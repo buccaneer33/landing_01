@@ -23,8 +23,8 @@ RUN cd /app && \npm install
 #Bundle app source
 COPY src /app/src/
 COPY assets /app/assets
-COPY assets/font-awesome/fonts /fonts
-COPY assets/fontie-package/fonts /css/fonts
+COPY assets/font-awesome/fonts /app/fonts
+COPY assets/fontie-package/fonts /app/css/fonts
 #RUN cd /app/src/ && ls
     
 # Start building project 
@@ -33,7 +33,7 @@ RUN cd /app && \npm run build
 # Expose port
 EXPOSE 8080
 
-#RUN cd /app && ls
+RUN cd /app && ls
 
 # Start server
 CMD [ "node", "server.js" ]

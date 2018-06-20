@@ -10,8 +10,9 @@
   flex-wrap: nowrap;
   align-items: stretch;
   justify-content: space-between;
+  margin-bottom: 40px;
 }
-.news{
+.news-item{
   //flex-grow: 1;
   flex-basis: 300px;
   flex-shrink: 0;
@@ -24,7 +25,7 @@
 
   &__name{
     flex-basis: 15px;
-    padding: 35px 0 5px;
+    padding: 5px 0;
   }
   &__img{
     flex-basis: 280px;
@@ -36,12 +37,13 @@
     flex-basis: 50px;
   }
 }
-.latest{
+.gallery-fresh{
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   align-items: stretch;
   justify-content: space-between;
+  margin-bottom: 40px;
 
   &__header{
     flex-basis: 450px;

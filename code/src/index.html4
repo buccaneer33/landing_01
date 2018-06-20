@@ -79,42 +79,23 @@
 			<div class="wrapper main--wrapper">
 
 				<div class="galery">
-					<div class="galery__wrapper">
-						<input type="radio" name="point" id="slide1" checked>
-						<input type="radio" name="point" id="slide2">
-						<input type="radio" name="point" id="slide3">
-						<input type="radio" name="point" id="slide4">
-						<input type="radio" name="point" id="slide5">
-						<input type="radio" name="point" id="slide6">
-						<div class="galery__slider">
-							<div class="slides slide1"><div class="galery__slider-mess">Lorem ipsum dolor sit amet,
-								consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-								 magna aliqua.</div></div>
-							<div class="slides slide2"><div class="galery__slider-mess">Lorem ipsum dolor sit amet,
-								consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-								 magna aliqua.</div></div>
-							<div class="slides slide3"><div class="galery__slider-mess">Lorem ipsum dolor sit amet,
-								consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-								 magna aliqua.</div></div>
-							<div class="slides slide4"><div class="galery__slider-mess">Lorem ipsum dolor sit amet,
-								consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-								 magna aliqua.</div></div>
-							<div class="slides slide5"><div class="galery__slider-mess">Lorem ipsum dolor sit amet,
-								consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-								 magna aliqua.</div></div>
-							<div class="slides slide6"><div class="galery__slider-mess">Lorem ipsum dolor sit amet,
-								consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-								 magna aliqua.</div></div>
-						</div>
-						<div class="controls">
-							<label for="slide1"></label>
-							<label for="slide2"></label>
-							<label for="slide3"></label>
-							<label for="slide4"></label>
-							<label for="slide5"></label>
-							<label for="slide6"></label>
-						</div>
+					<div class="galery__slider slider">
+						<img class="slider__item" src="img/1.jpg" />
+						<img class="slider__item" src="img/2.jpg" />
+						<img class="slider__item" src="img/3.jpg" />
+						<img class="slider__item" src="img/4.jpg" />
+						<img class="slider__item" src="img/5.jpg" />
+						<img class="slider__item" src="img/6.jpg" />
 					</div>
+					<div class="slider__control">
+					  <button class="slider__control_item slider__control_item--active" onclick="currentDiv(1)"></button>
+					  <button class="slider__control_item" onclick="currentDiv(2)"></button>
+					  <button class="slider__control_item" onclick="currentDiv(3)"></button>
+						<button class="slider__control_item" onclick="currentDiv(4)"></button>
+						<button class="slider__control_item" onclick="currentDiv(5)"></button>
+						<button class="slider__control_item" onclick="currentDiv(6)"></button>
+					</div>
+
 				</div>
 
 				<div class="news_platform">
@@ -183,16 +164,16 @@
 								<div class="info-block__stay-social social">
 										<h3 class="info-block__header info-block__header--theme">Stay Social</h3>
 										<div class="social__button">
-												<a class="social__link link--more social__link--linked_in" href="#">LinkedIn</a>
+												<a class="social__link social__link--linked_in" href="#">LinkedIn</a>
 										</div>
 										<div class="social__button">
-												<a class="social__link link--more social__link--pinterest" href="#">Pinterest</a>
+												<a class="social__link social__link--pinterest" href="#">Pinterest</a>
 										</div>
 										<div class="social__button">
-												<a class="social__link link--more social__link--twitter" href="#">Twitter</a>
+												<a class="social__link social__link--twitter" href="#">Twitter</a>
 										</div>
 										<div class="social__button">
-												<a class="social__link link--more social__link--rss_feed" href="#">RSS Feed</a>
+												<a class="social__link social__link--rss_feed" href="#">RSS Feed</a>
 										</div>
 								</div>
 						</div>

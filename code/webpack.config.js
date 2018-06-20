@@ -33,14 +33,14 @@ const config = {
 						//"css-loader", 
 						{loader: 'css-loader', options: {
 							url: false,
-							minimize: true,
+							minimize: false,
 							sourceMap: true
 						}},{
 						//"sass-loader",
 						loader: 'sass-loader', options: {
 							sourceMap: true
 						}},{
-						loader: 'postcss-loader',
+						loader: 'postcss-loader'/*,
 							options: {
 								plugins: [
 									autoprefixer({
@@ -48,7 +48,7 @@ const config = {
 									})
 								],
 								sourceMap: true
-							}	
+							}	*/
 						}
 						
 						],
@@ -72,10 +72,10 @@ const config = {
 					  use:
 					  /*[
 						 {
-							 loader: 'file-loader?name=./assets/fontie-package/fonts/[name].[ext]'
+							 loader: 'file-loader?name=./fonts/[name].[ext]'
 						 },
 						 {
-							 loader: 'file-loader?name=./assets/font-awesome/fonts/[name].[ext]'
+							 loader: 'file-loader?name=./fonts/[name].[ext]'
 						 }
 						]*/
 
@@ -85,7 +85,7 @@ const config = {
 						  name: "[name].[ext]",
 						  context: path.resolve(__dirname, "./fonts")
 						},
-					  },/**/
+					  }/*,*/
 					  
 					  
 					}
@@ -117,7 +117,7 @@ const config = {
         }),
 	new FaviconsWebpackPlugin({
     logo: './assets/favicon.png',  // Your source logo
-    prefix: 'icons-[hash]/',    // The prefix for all image files (might be a folder or a name)
+    prefix: 'favicon/',    // The prefix for all image files (might be a folder or a name)
     emitStats: false,    // Emit all stats of the generated icons
     statsFilename: 'iconstats-[hash].json',// The name of the json containing all favicon information
     persistentCache: true,
