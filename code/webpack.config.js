@@ -90,7 +90,7 @@ const config = {
     prefix: 'favicon/',    
     emitStats: false,    
     statsFilename: 'iconstats-[hash].json',
-    persistentCache: false,
+    persistentCache: true,
     inject: true, 
 	background: '#fff',
     title: 'Webpack App',

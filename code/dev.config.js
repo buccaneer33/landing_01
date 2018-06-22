@@ -3,10 +3,8 @@
 const path              = require('path');
 const ExtractTextPlugin = require ('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const postcss           = require('postcss');
 let FaviconsWebpack     = require('favicons-webpack-plugin');
 var sass                = require('sass');
-const autoprefixer      = require('autoprefixer');
 
 const config = {
 	mode: "development",
@@ -21,9 +19,9 @@ const config = {
 		rules: [
 				{
 					test: /\.js$/,
-					exclude: /(node_modules|bower_components)/,
+					exclude: /node_modules/,
 					use: {
-						loader: 'babel-loader',
+						/**/loader: 'babel-loader',
 						options: {presets: ['babel-preset-env']}
 					}
 				},{ 
@@ -38,11 +36,7 @@ const config = {
 							}},{
 							loader: 'sass-loader', options: {
 								sourceMap: true
-							}},{
-							loader: 'postcss-loader', options: {
-								sourceMap: true
-							}
-							}
+							}}
 						],
 						publicPath:'./css/'
 					})

@@ -33,14 +33,15 @@
   color: #ffffff;
   font-size: 13px;
   border-radius: 0 0 8px 8px;
-  //width: 121px;
   z-index: 3;
   list-style-type: none;
   margin: 0 auto;
   padding: 0px 0px;
+
 }
 .submenu1{
   visibility: hidden;
+  transition: all 1s ease 0s;
 
   &__item{
   //  margin: 0 auto;
@@ -54,16 +55,19 @@
 .submenu1--open:hover{
   border-radius: 8px 8px 0px 0px;
     background-color: #636363;
+    transition: all 0.5s ease 0.5s;
 }
 .submenu1--open:hover  .submenu1{
   visibility: visible;
   border-radius: 0px 0px 8px 8px;
+  transition: all 0.2s ease 0.2s;
 }
 
 .submenu2{
   top: 0px;
   left: 118px;
   visibility: hidden;
+  transition: all 0.2s ease 0.2s;
 
   &__item{
   //  margin: 0 auto;
@@ -76,6 +80,7 @@
 }
 .submenu2--open:hover  .submenu2{
   visibility: visible;
+  transition: all 0.2s ease 0.2s;
 }
 .submenu3{
   //overflow: hidden;

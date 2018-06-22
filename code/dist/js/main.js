@@ -79,7 +79,7 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\n//# sourceURL=webpack:///./src/js/api.js?");
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n    value: true\n});\nfunction greet() {\n    console.log('Have a great day!');\n};\n\nexports.default = greet;\n\n//# sourceURL=webpack:///./src/js/api.js?");
 
 /***/ }),
 

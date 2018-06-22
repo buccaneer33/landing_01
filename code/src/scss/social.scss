@@ -1,7 +1,7 @@
 .social{
   &__button{
     flex-basis: 150px;
-    height: 60px;
+    height: 25px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -11,6 +11,7 @@
   &__link{
     color:$more__font--color;
     text-decoration: none;
+    padding: 5px 0px;
 
     &--linked_in{
 
