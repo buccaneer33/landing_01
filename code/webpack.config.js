@@ -1,35 +1,42 @@
 'use strict';
 
-const path = require('path');
+const path              = require('path');
 const ExtractTextPlugin = require ('extract-text-webpack-plugin');
-const HtmlWebpackPlugin    = require('html-webpack-plugin');
-const postcss    = require('postcss');
-let FaviconsWebpackPlugin = require('favicons-webpack-plugin');
-var sass = require('sass');
-const autoprefixer = require('autoprefixer');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+let FaviconsWebpack     = require('favicons-webpack-plugin');
+var sass                = require('sass');
 
 const config = {
-	mode: "production",
+	mode: "development",
 	entry:{
 		js: './src/js/index.js',
-		},
-	output: {path: path.resolve(__dirname, 'dist'),filename: 'js/main.js'},
+	},
+	output: {
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'js/main.js'
+  },
 	module: {
 		rules: [
-				{	test: /\.js$/,
-					exclude: /(node_modules|bower_components)/,
-					use: {loader: 'babel-loader', options: {presets: ['babel-preset-env']}}
+				{
+					test: /\.js$/,
+					exclude: /node_modules/,
+					use: {
+						/**/loader: 'babel-loader',
+						options: {presets: ['babel-preset-env']}
+					}
 				},{ 
 					test: /\.(sa|sc|c)ss$/,
 					use: ExtractTextPlugin.extract({
 						fallback: "style-loader",
 						use: [
-							{	loader: 'css-loader', options: {url: false, minimize: true, sourceMap: false}
-							},{
-								loader: 'sass-loader', options: {sourceMap: false}
-							},{
-							loader: 'postcss-loader'
-							}
+							{loader: 'css-loader', options: {
+								url: false,
+								minimize: false,
+								sourceMap: true
+							}},{
+							loader: 'sass-loader', options: {
+								sourceMap: true
+							}}
 						],
 						publicPath:'./css/'
 					})
@@ -45,7 +52,8 @@ const config = {
 							}
 						  }
 						]
-				},
+				},/**/
+				
 				{
 					  test: /\.(ttf|eot|woff|woff2)$/,
 					  use:
@@ -55,9 +63,7 @@ const config = {
 						  name: "[name].[ext]",
 						  context: path.resolve(__dirname, "./fonts")
 						},
-					  }
-					  
-					  
+					  } 
 					}
 		]
   },
@@ -81,11 +87,11 @@ const config = {
 				}
 			},
 			title: 'Epam-Markup Http build',
-			minify: {collapseWhitespace: true},
+			//minify: {collapseWhitespace: true},
 			filename: '../dist/index.html',
 			template: 'src/index.html'
         }),
-	new FaviconsWebpackPlugin({
+	new FaviconsWebpack({
     logo: './assets/favicon.png', 
     prefix: 'favicon/',    
     emitStats: false,    
@@ -95,9 +101,9 @@ const config = {
 	background: '#fff',
     title: 'Webpack App',
 		icons: {
-		  android: true,
-		  appleIcon: true,
-		  appleStartup: true,
+		  android: false,
+		  appleIcon: false,
+		  appleStartup: false,
 		  coast: false,
 		  favicons: true,
 		  firefox: true,
@@ -107,6 +113,15 @@ const config = {
 		  windows: false
 		}
 	})
-  ]
+  ],
+    devServer: {
+    contentBase: path.join(__dirname, 'dist'),
+	bonjour: true,
+	    allowedHosts: [
+      'dev__host.ude',
+    ],
+    compress: false,
+    port: 9000
+  }
 };
 module.exports = config;

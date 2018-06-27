@@ -1,13 +1,3 @@
-@import "variables.scss";
-@import "body.scss";
-@import "header.scss";
-@import "footer.scss";
-@import "main.scss";
-@import "navigation.scss";
-@import "theme--colors.scss";
-@import "theme--links.scss";
-@import "slider.scss";
-@import "social.scss";
 @font-face{
 	 font-family:'FontAwesome';src:url('../../assets/font-awesome/fontsfontawesome-webfont.eot');
 		src:
@@ -29,3 +19,15 @@
     font-stretch: normal;
     unicode-range: U+0020-2074;
 }
+@import "../../node_modules/animate.css/animate.css";
+
+@import "variables.scss";
+@import "body.scss";
+@import "header.scss";
+@import "footer.scss";
+@import "main.scss";
+@import "navigation.scss";
+@import "theme--colors.scss";
+@import "theme--links.scss";
+@import "slider.scss";
+@import "social.scss";

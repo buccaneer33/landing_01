@@ -7,58 +7,34 @@ const postcss    = require('postcss');
 let FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 var sass = require('sass');
 const autoprefixer = require('autoprefixer');
-//var cleaner  = postcss([ autoprefixer({ add: false, browsers: [] }) ]);
-//var prefixer = postcss([ autoprefixer ]);
-
-
 
 const config = {
+	mode: "production",
 	entry:{
-		js: './src/js/index.js'
-	},
-	output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: 'js/main.js'
-  },
+		js: './src/js/index.js',
+		},
+	output: {path: path.resolve(__dirname, 'dist'),filename: 'js/main.js'},
 	module: {
 		rules: [
-				{
-					test: /\.js$/,
+				{	test: /\.js$/,
 					exclude: /(node_modules|bower_components)/,
-					use: {
-						loader: 'babel-loader',
-						options: {presets: ['babel-preset-env']}
-					}
+					use: {loader: 'babel-loader', options: {presets: ['babel-preset-env']}}
 				},{ 
 					test: /\.(sa|sc|c)ss$/,
 					use: ExtractTextPlugin.extract({
 						fallback: "style-loader",
 						use: [
-						//"css-loader", 
-						{loader: 'css-loader', options: {
-							url: false,
-							minimize: true,
-							sourceMap: true
-						}},{
-						//"sass-loader",
-						loader: 'sass-loader', options: {
-							sourceMap: true
-						}},{
-						loader: 'postcss-loader',
-							options: {
-								plugins: [
-									autoprefixer({
-										browsers:['last 6 version']
-									})
-								],
-								sourceMap: true
-							}	
-						}
-						
+							{	loader: 'css-loader', options: {url: false, minimize: true, sourceMap: false}
+							},{
+								loader: 'sass-loader', options: {sourceMap: false}
+							},{
+							loader: 'postcss-loader'
+							}
 						],
 						publicPath:'./css/'
 					})
-				},{
+				},
+				{
 					test: /\.(png|jpg|gif)$/,
 					use: [
 						  {
@@ -69,7 +45,20 @@ const config = {
 							}
 						  }
 						]
-				}
+				},
+				{
+					  test: /\.(ttf|eot|woff|woff2)$/,
+					  use:
+					  {
+						loader: "file-loader",
+						options: {
+						  name: "[name].[ext]",
+						  context: path.resolve(__dirname, "./fonts")
+						},
+					  }
+					  
+					  
+					}
 		]
   },
   plugins: [
@@ -92,19 +81,19 @@ const config = {
 				}
 			},
 			title: 'Epam-Markup Http build',
-			//minify: {collapseWhitespace: true},
+			minify: {collapseWhitespace: true},
 			filename: '../dist/index.html',
 			template: 'src/index.html'
         }),
 	new FaviconsWebpackPlugin({
-    logo: './assets/favicon.png',  // Your source logo
-    prefix: 'icons-[hash]/',    // The prefix for all image files (might be a folder or a name)
-    emitStats: false,    // Emit all stats of the generated icons
-    statsFilename: 'iconstats-[hash].json',// The name of the json containing all favicon information
+    logo: './assets/favicon.png', 
+    prefix: 'favicon/',    
+    emitStats: false,    
+    statsFilename: 'iconstats-[hash].json',
     persistentCache: true,
-    inject: true, // Inject the html into the html-webpack-plugin
-	background: '#fff',// favicon background color (see https://github.com/haydenbleasel/favicons#usage)
-    title: 'Webpack App',// favicon app title (see https://github.com/haydenbleasel/favicons#usage)
+    inject: true, 
+	background: '#fff',
+    title: 'Webpack App',
 		icons: {
 		  android: true,
 		  appleIcon: true,
