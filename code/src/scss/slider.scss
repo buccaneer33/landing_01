@@ -40,8 +40,7 @@
 #slide3:checked ~ .galery__slider > .slide3,
 #slide4:checked ~ .galery__slider > .slide4,
 #slide5:checked ~ .galery__slider > .slide5,
-#slide6:checked ~ .galery__slider > .slide6,
-#slide7:checked ~ .galery__slider > .slide7{
+#slide6:checked ~ .galery__slider > .slide6,{
 	opacity: 1;
 	z-index: 1;
 	transform: scale(1);
@@ -111,8 +110,8 @@
      75%{box-shadow: 0 0 7px #eee;}
      to {box-shadow: 0 0 3px #bbb;}
  }
- .showSlide{
+ /*.showSlide{
 	 opacity: 1;
 	 z-index: 1;
 	 transform: scale(1);
- }
+ }*/

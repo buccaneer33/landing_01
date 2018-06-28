@@ -255,7 +255,7 @@ eval("module.exports = __webpack_require__.p + \"./img/6.jpg\";\n\n//# sourceURL
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\nwindow.onload = function () {\n  function showSlide(imgSrc) {\n    //  alert(imgSrc);\n\n    var getSlide = document.getElementById('slide__latest');\n    getSlide.style.backgroundImage = 'url(' + imgSrc + ')';\n    document.getElementById('slide7').checked = true;\n  }\n\n  function Menu(elem) {\n\n    this.getSrc = function (imgSrc) {\n      showSlide(imgSrc);\n    };\n    var self = this;\n    elem.onclick = function (e) {\n      var target = e.target;\n      var action = target.getAttribute('data-action');\n      var imgSrc = target.src;\n      if (action) {\n        self[action](imgSrc);\n      }\n    };\n  }\n\n  new Menu(galleryFresh);\n};\n\n//# sourceURL=webpack:///./src/js/api.js?");
+eval("/*window.onload = function () {\r\n  function showSlide(imgSrc){\r\n  //  alert(imgSrc);\r\n\r\n  var getSlide = document.getElementById('slide__latest');\r\n  getSlide.style.backgroundImage = 'url('+imgSrc+')';\r\n  document.getElementById('slide7').checked = true;\r\n}\r\n\r\n\r\n  function Menu(elem) {\r\n\r\n      this.getSrc = function(imgSrc) {showSlide(imgSrc);};\r\n      var self = this;\r\n      elem.onclick = function(e) {\r\n        var target = e.target;\r\n        var action = target.getAttribute('data-action');\r\n  \t    var imgSrc = target.src;\r\n        if (action) {\r\n          self[action](imgSrc);\r\n        }\r\n      };\r\n    }\r\n\r\nnew Menu(galleryFresh);\r\n\r\n};*/\n\n\n//# sourceURL=webpack:///./src/js/api.js?");
 
 /***/ }),
 

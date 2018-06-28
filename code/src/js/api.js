@@ -1,4 +1,4 @@
-window.onload = function () {
+/*window.onload = function () {
   function showSlide(imgSrc){
   //  alert(imgSrc);
 
@@ -24,4 +24,4 @@ window.onload = function () {
 
 new Menu(galleryFresh);
 
-};
+};*/
