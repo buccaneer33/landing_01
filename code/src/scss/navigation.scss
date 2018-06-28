@@ -40,8 +40,9 @@
 
 }
 .submenu1{
-  visibility: hidden;
-  transition: all 1s ease 0s;
+  opacity: 0;
+  transform: scale(.8);
+  transition: .4s ease-in-out;
 
   &__item{
   //  margin: 0 auto;
@@ -60,14 +61,17 @@
 .submenu1--open:hover  .submenu1{
   visibility: visible;
   border-radius: 0px 0px 8px 8px;
-  transition: all 0.2s ease 0.2s;
+  visibility: visible;
+  opacity: 1;
+  transform: scale(1);
 }
 
 .submenu2{
   top: 0px;
   left: 118px;
-  visibility: hidden;
-  transition: all 0.2s ease 0.2s;
+  opacity: 0;
+  transform: scale(.8);
+  transition: .4s ease-in-out;
 
   &__item{
   //  margin: 0 auto;
@@ -80,7 +84,8 @@
 }
 .submenu2--open:hover  .submenu2{
   visibility: visible;
-  transition: all 0.2s ease 0.2s;
+  opacity: 1;
+  transform: scale(1);
 }
 .submenu3{
   //overflow: hidden;
